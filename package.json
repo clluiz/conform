@@ -1,0 +1,26 @@
+{
+  "name": "conform",
+  "version": "1.0.0",
+  "description": "App para controle financeiro.Progressive Web App utilizando ES6 (babel, webpack), API padrão da web, CSS3 puro e html.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clluiz/conform.git"
+  },
+  "keywords": [
+    "Progressive",
+    "web",
+    "app",
+    "ES6",
+    "webpack"
+  ],
+  "author": "Cleiton Luiz Rocha Teodoro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clluiz/conform/issues"
+  },
+  "homepage": "https://github.com/clluiz/conform#readme"
+}
