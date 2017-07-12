@@ -4,7 +4,8 @@
   "description": "App para controle financeiro.Progressive Web App utilizando ES6 (babel, webpack), API padrão da web, CSS3 puro e html.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/clluiz/conform/issues"
   },
-  "homepage": "https://github.com/clluiz/conform#readme"
+  "homepage": "https://github.com/clluiz/conform#readme",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
 }
