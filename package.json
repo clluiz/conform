@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "lite-server",
-    "lint": "eslint"
+    "lint": "eslint",
+    "start": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -26,9 +27,13 @@
   },
   "homepage": "https://github.com/clluiz/conform#readme",
   "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.7.0",
-    "lite-server": "^2.3.0"
+    "lite-server": "^2.3.0",
+    "webpack": "^3.2.0"
   }
 }
