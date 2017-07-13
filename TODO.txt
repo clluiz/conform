@@ -2,8 +2,6 @@
 
     - Javascript
         1) Transpilar ES6 para Javascript comum
-        2) Minify
-        3) Uglify
         4) Bundle
     - CSS:
         1) Minify
@@ -11,5 +9,3 @@
         3) Bundle
     - HTML:
         -
-
-3) Configurar babel;
