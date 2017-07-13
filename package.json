@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "lite-server",
+    "dev": "webpack-dev-server",
     "lint": "eslint",
-    "start": "webpack --config webpack.config.js"
+    "start": "npm run dev | webpack --config webpack.config.js --watch"
   },
   "repository": {
     "type": "git",
@@ -33,7 +33,7 @@
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-import": "^2.7.0",
-    "lite-server": "^2.3.0",
-    "webpack": "^3.2.0"
+    "webpack": "^3.2.0",
+    "webpack-dev-server": "^2.5.1"
   }
 }
