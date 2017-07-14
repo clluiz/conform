@@ -1,7 +1,5 @@
+const App = require('./app');
 
+const app = new App();
 
-const a = 1;
-
-const b = n => n + 1;
-
-alert('a');
+app.hello();
