@@ -1,8 +1,5 @@
-class App {
+export default class App {
 
-  hello() {
-    console.log('teste');
+  start() {
   }
 }
-
-module.exports = App;

@@ -1,5 +1,7 @@
-const App = require('./app');
+require('./core/css/base.css');
+
+import App from './app';
 
 const app = new App();
 
-app.hello();
+app.start();
