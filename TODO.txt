@@ -9,3 +9,12 @@
         3) Bundle
     - HTML:
         -
+Definir: 
+
+ 1) roteamento (lib ou proprio)
+ 2) Binding:
+	
+	- Maneira "burra" ( manipular diretamento o DOM )
+	- Observer
+	- SAM
+	- Templates + javascript

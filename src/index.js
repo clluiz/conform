@@ -1,7 +1,9 @@
-require('./core/css/base.css');
-
 import App from './app';
+import Router from './core/scripts/router';
 
-const app = new App();
+const router = new Router();
+router.register('/', 'login.html');
+
+const app = new App(router);
 
 app.start();
