@@ -5,5 +5,6 @@ export default class App {
   }
 
   start() {
+    // pegar o path name, processar e enviar para a View correta
   }
 }

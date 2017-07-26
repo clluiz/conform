@@ -10,5 +10,9 @@ export default class Router {
     }
     this._views.set(url, template);
   }
+
+  setUrl(url) {
+    history.replaceState(url);
+  }
 }
 
