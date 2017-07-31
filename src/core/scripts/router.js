@@ -1,18 +1,24 @@
+import Route from './route';
+
 export default class Router {
 
   constructor() {
-    this._views = new Map();
+    this._routes = new Map();
   }
 
-  register(url, template) {
-    if (this._views.has(url)) {
-      throw new Error(`${url} já existe.`);
+  register(pattern, template) {
+    if (this._routes.has(pattern)) {
+      throw new Error(`${pattern} já existe.`);
     }
-    this._views.set(url, template);
+    this._routes.set(pattern, template);
   }
 
-  setUrl(url) {
-    history.replaceState(url);
+  routeTo(path) {
+    const p = new Route(path);
+    for (const entry of this._routes.keys()) {
+      if (p.match(entry)) {
+        console.log(this._routes.get(entry));
+      }
+    }
   }
 }
-
