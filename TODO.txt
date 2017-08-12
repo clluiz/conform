@@ -1,20 +1,17 @@
-2) Configurar webpack:
+Algoritmo para rotas:
 
-    - Javascript
-        1) Transpilar ES6 para Javascript comum
-        4) Bundle
-    - CSS:
-        1) Minify
-        2) Uglify
-        3) Bundle
-    - HTML:
-        -
-Definir: 
+- Estrutura de pastas do projeto:
 
- 1) roteamento (lib ou proprio)
- 2) Binding:
-	
-	- Maneira "burra" ( manipular diretamento o DOM )
-	- Observer
-	- SAM
-	- Templates + javascript
+  /src
+    /core
+      /scripts
+      /css
+    /components
+    /assets
+    app.js
+    index.html
+    index.js
+
+- Comparar cada fragmento da url passada com os fragmentos correspondentes do padrão;
+- Regex quebrar path /\/\w+/g;
+- Regex extrair parametro /\/:\w+/g;

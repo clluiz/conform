@@ -1,4 +1,4 @@
-import Route from './route';
+import Path from './path';
 
 export default class Router {
 
@@ -14,7 +14,7 @@ export default class Router {
   }
 
   routeTo(path) {
-    const p = new Route(path);
+    const p = new Path(path);
     for (const entry of this._routes.keys()) {
       if (p.match(entry)) {
         console.log(this._routes.get(entry));
