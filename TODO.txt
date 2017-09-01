@@ -13,5 +13,6 @@ Algoritmo para rotas:
     index.js
 
 - Comparar cada fragmento da url passada com os fragmentos correspondentes do padrão;
-- Regex quebrar path /\/\w+/g;
-- Regex extrair parametro /\/:\w+/g;
+- Regex quebrar path /\/[(^:)a-zA-Z0-9-]{1,}/g
+- Usar regex nos patterns das rotas e comparar cada fragmento usando match
+

@@ -15,9 +15,9 @@ export default class Router {
 
   routeTo(path) {
     const p = new Path(path);
-    for (const entry of this._routes.keys()) {
-      if (p.match(entry)) {
-        console.log(this._routes.get(entry));
+    for (const pattern of this._routes.keys()) {
+      if (p.match(pattern)) {
+        console.log(this._routes.get(pattern));
       }
     }
   }

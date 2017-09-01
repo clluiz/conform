@@ -6,6 +6,7 @@ export default class App {
 
   start() {
     // pegar o path name, processar e enviar para a View correta
-    this._router.routeTo('/teste');
+    // this._router.routeTo('/teste*');
+    this._router.routeTo('/teste/1');
   }
 }

@@ -1,4 +1,4 @@
-const regexParam = /^:/;
+//const regexFragments = /\/[(^:)a-zA-Z0-9-]{1,}/g;
 
 export default class Path {
 
@@ -7,11 +7,6 @@ export default class Path {
   }
 
   match(pattern) {
-    if (this._path.toLowerCase() === pattern.toLowerCase()) {
-      return true;
-    } else if (this._path.length === pattern.length) {
-      return true;
-    }
-    return false;
+    return this._path.match(pattern);
   }
 }
