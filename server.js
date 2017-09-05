@@ -11,12 +11,14 @@ if (process.env.NODE_ENV === 'development') {
   const webpackMiddleWare = require('webpack-dev-middleware');
 
   app.use(webpackMiddleWare(webpack(webpackConfig)));
+  app.use(express.static('dist'));
 } else {
   app.use(express.static('dist'));
 }
 
+
 app.get('*', (request, response) => {
-  response.sendfile(path.join(__dirname, 'src/index.html'));
+  response.sendfile(path.join(__dirname, './dist/index.html'));
 });
 
 app.listen(app.get('port'), () => {

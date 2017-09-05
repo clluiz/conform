@@ -4,11 +4,12 @@
   "description": "App para controle financeiro.Progressive Web App utilizando ES6 (babel, webpack), API padrão da web, CSS3 puro e html.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf ./dist",
     "dev": "webpack-dev-server",
     "lint": "eslint",
     "start": "npm run dev | webpack --config webpack.config.js --watch",
-    "express": "NODE_ENV=development PORT=9001 node server.js"
+    "build:dev": "npm run clean | webpack --watch",
+    "express": "npm run build:dev | NODE_ENV=development PORT=9001 node server.js"
   },
   "repository": {
     "type": "git",
