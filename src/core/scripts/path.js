@@ -1,5 +1,3 @@
-//const regexFragments = /\/[(^:)a-zA-Z0-9-]{1,}/g;
-
 export default class Path {
 
   constructor(path) {

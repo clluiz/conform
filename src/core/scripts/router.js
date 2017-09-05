@@ -17,8 +17,11 @@ export default class Router {
     const p = new Path(path);
     for (const pattern of this._routes.keys()) {
       if (p.match(pattern)) {
-        console.log(this._routes.get(pattern));
+        console.log(`Router: Encaminhado para ${path}.`);
+        history.replaceState(undefined, undefined, path);
+        return;
       }
     }
+    history.pushState(undefined, undefined, '/');
   }
 }

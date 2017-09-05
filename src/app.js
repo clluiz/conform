@@ -5,8 +5,11 @@ export default class App {
   }
 
   start() {
+    window.onpopstate = () => {
+      console.log('mudou');
+    };
+
     // pegar o path name, processar e enviar para a View correta
-    // this._router.routeTo('/teste*');
-    this._router.routeTo('/teste/1');
+    this._router.routeTo(window.location.pathname);
   }
 }
