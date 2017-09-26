@@ -4,7 +4,7 @@ const path = require('path');
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
+    filename: 'scripts/bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
@@ -36,5 +36,10 @@ module.exports = {
   },
   plugins: [new HtmlWebpackPlugin({
     template: path.resolve(__dirname, './src', 'index.html'),
+  }),
+  new HtmlWebpackPlugin({
+    filename: 'components/login.html',
+    template: './src/components/login/login.html',
+    inject: false
   })],
 };

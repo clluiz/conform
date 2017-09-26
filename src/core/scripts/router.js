@@ -19,6 +19,23 @@ export default class Router {
       if (p.match(pattern)) {
         console.log(`Router: Encaminhado para ${path}.`);
         history.pushState(undefined, undefined, path);
+
+        // atualizar view com o template
+        let template = `components/${this._routes.get(pattern)}`;
+        fetch(template)
+          .then(response => {
+            response.text().then(html => {
+              console.log(html);
+              let range = document.createRange();
+              let documentFragment = range.createContextualFragment(html);
+              document.getElementById('app').appendChild(documentFragment);
+            })
+          })
+          .catch(function(error){
+            console.error('erro')
+          });
+
+        console.log(this._routes.get(pattern));
         return;
       }
     }

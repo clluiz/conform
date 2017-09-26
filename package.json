@@ -7,8 +7,8 @@
     "clean": "rimraf ./dist",
     "dev": "webpack-dev-server",
     "lint": "eslint",
-    "start": "npm run dev | webpack --config webpack.config.js --watch",
-    "build:dev": "npm run clean | webpack --watch",
+    "start": "npm run clean | npm run dev | webpack --config webpack.config.js --watch",
+    "build:dev": "npm run clean | webpack",
     "express": "npm run build:dev | NODE_ENV=development PORT=9001 node server.js"
   },
   "repository": {
