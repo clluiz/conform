@@ -1,5 +1,24 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const fs = require('fs');
+
+function getComponentsTemplates() {
+  const htmlPlugins = [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src', 'index.html'),
+    })];
+  const componentsFolder = './src/components';
+  const contents = fs.readdirSync(componentsFolder);
+  const plugins = contents.filter(content => ['.', '..'].indexOf(content) === -1 &&
+      fs.statSync(`${componentsFolder}/${content}`).isDirectory()).map(content =>
+    (new HtmlWebpackPlugin({
+      filename: `components/${content}/${content}.html`,
+      template: path.resolve(__dirname, `./src/components/${content}`, `${content}.html`),
+      inject: false,
+    })));
+  //console.log(plugins);
+  return htmlPlugins.concat(plugins);
+}
 
 module.exports = {
   entry: './src/index.js',
@@ -34,12 +53,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: path.resolve(__dirname, './src', 'index.html'),
-  }),
-  new HtmlWebpackPlugin({
-    filename: 'components/login.html',
-    template: './src/components/login/login.html',
-    inject: false
-  })],
+  plugins: getComponentsTemplates(),
 };

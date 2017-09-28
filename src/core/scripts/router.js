@@ -31,7 +31,7 @@ export default class Router {
               document.getElementById('app').appendChild(documentFragment);
             })
           })
-          .catch(function(error){
+          .catch(function (error) {
             console.error('erro')
           });
 
