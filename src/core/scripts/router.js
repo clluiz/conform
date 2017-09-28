@@ -21,19 +21,17 @@ export default class Router {
         history.pushState(undefined, undefined, path);
 
         // atualizar view com o template
-        let template = `components/${this._routes.get(pattern)}`;
+        const template = `components/${this._routes.get(pattern)}`;
         fetch(template)
-          .then(response => {
-            response.text().then(html => {
+          .then((response) => {
+            response.text().then((html) => {
               console.log(html);
-              let range = document.createRange();
-              let documentFragment = range.createContextualFragment(html);
+              const range = document.createRange();
+              const documentFragment = range.createContextualFragment(html);
               document.getElementById('app').appendChild(documentFragment);
-            })
+            });
           })
-          .catch(function (error) {
-            console.error('erro')
-          });
+          .catch(() => console.error('erro'));
 
         console.log(this._routes.get(pattern));
         return;

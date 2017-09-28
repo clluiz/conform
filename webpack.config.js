@@ -3,21 +3,24 @@ const path = require('path');
 const fs = require('fs');
 
 function getComponentsTemplates() {
-  const htmlPlugins = [
+  const htmls = [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './src', 'index.html'),
     })];
   const componentsFolder = './src/components';
   const contents = fs.readdirSync(componentsFolder);
-  const plugins = contents.filter(content => ['.', '..'].indexOf(content) === -1 &&
-      fs.statSync(`${componentsFolder}/${content}`).isDirectory()).map(content =>
-    (new HtmlWebpackPlugin({
-      filename: `components/${content}/${content}.html`,
-      template: path.resolve(__dirname, `./src/components/${content}`, `${content}.html`),
-      inject: false,
-    })));
-  //console.log(plugins);
-  return htmlPlugins.concat(plugins);
+  const components = contents
+                      .filter(content =>
+                              ['.', '..'].indexOf(content) === -1 &&
+                                fs.statSync(`${componentsFolder}/${content}`).isDirectory())
+                      .map(content =>
+                            (new HtmlWebpackPlugin({
+                              filename: `components/${content}/${content}.html`,
+                              template: path.resolve(__dirname, `./src/components/${content}`, `${content}.html`),
+                              inject: false,
+                            })
+                          ));
+  return htmls.concat(components);
 }
 
 module.exports = {
